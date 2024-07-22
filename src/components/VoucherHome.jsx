@@ -37,13 +37,16 @@ const VoucherHome = () => {
     <Slider {...settings}>
       {slides.map((slide, index) => (
         <div className="slide bg-black  md:mt-8 w-full " key={slide.index}>
-          <div className=" w-1/2 inline-flex flex-col justify-center gap-2 items-start text-white text-xs pt-2 pl-2  md:pt-8 md:pl-8">
+          <div
+            className=" inline-flex flex-col justify-center gap-2 items-start text-white text-xs pt-2
+           pl-2  md:pt-8 md:pl-8 md:min-h-[335px]"
+          >
             <div className="flex justify-start items-center w-full gap-2 md:gap-5">
               <img src={slide.logo} alt="apple logo" className="w-8 md:w-10" />
               <p>{slide.title}</p>
             </div>
 
-            <p className="justify-self-start text-2xl md:text-5xl">
+            <p className="justify-self-start text-2xl md:text-4xl">
               {slide.description}
             </p>
             <Link
@@ -69,7 +72,7 @@ const VoucherHome = () => {
             </Link>
           </div>
 
-          <div className="inline-flex p-2 md:py-4 md:pr-8 w-1/2">
+          <div className=" p-2 md:py-4 md:pr-8">
             <img src={slide.image} alt="iphone" />
           </div>
         </div>

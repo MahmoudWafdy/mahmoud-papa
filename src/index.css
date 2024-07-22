@@ -43,4 +43,5 @@
 }
 .voucher_Home .slide {
   display: inline-flex !important;
+  justify-content: space-between;
 }
