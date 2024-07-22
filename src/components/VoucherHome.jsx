@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import CustomSlider from "./CustomSlider";
 
 const settings = {
   dots: true, // Enable dots/pagination
@@ -10,7 +9,7 @@ const settings = {
   slidesToScroll: 1,
   autoplay: true, // Enable automatic sliding
   autoplaySpeed: 3000, // Adjust the speed as needed
-  arrows: true, // Enable left and right arrows for control
+  arrows: false, // Enable left and right arrows for control
 };
 const slides = [
   {
@@ -20,15 +19,15 @@ const slides = [
     image: "../src/img/iphone.png",
   },
   {
-    logo: "https://via.placeholder.com/800x400",
-    title: "Slide 2",
-    description: "Description for Slide 2",
+    log: "../src/img/samsung-logo.png",
+    title: "Samsung Galaxy S21",
+    description: "Limited Time Offer until next month",
     image: "../src/img/samsung.png",
   },
   {
-    log: "../src/img/apple-logo.png",
-    title: "Slide 3",
-    description: "Description for Slide 3",
+    logo: "../src/img/apple-logo.png",
+    title: "Iphone 14 Series",
+    description: "Up to 10% off Voucher",
     image: "../src/img/iphone.png",
   },
 ];
@@ -37,11 +36,8 @@ const VoucherHome = () => {
   return (
     <Slider {...settings}>
       {slides.map((slide, index) => (
-        <div
-          className="voucher flex bg-black md:ml-8 md:mt-8 w-full "
-          key={slide.index}
-        >
-          <div className="flex flex-col justify-center gap-2 items-start text-white text-xs pt-2 pl-2  md:pt-8 md:pl-8">
+        <div className="slide bg-black  md:mt-8 w-full " key={slide.index}>
+          <div className=" w-1/2 inline-flex flex-col justify-center gap-2 items-start text-white text-xs pt-2 pl-2  md:pt-8 md:pl-8">
             <div className="flex justify-start items-center w-full gap-2 md:gap-5">
               <img src={slide.logo} alt="apple logo" className="w-8 md:w-10" />
               <p>{slide.title}</p>
@@ -72,7 +68,8 @@ const VoucherHome = () => {
               </svg>
             </Link>
           </div>
-          <div className="p-2 md:py-4 md:pr-8">
+
+          <div className="inline-flex p-2 md:py-4 md:pr-8 w-1/2">
             <img src={slide.image} alt="iphone" />
           </div>
         </div>

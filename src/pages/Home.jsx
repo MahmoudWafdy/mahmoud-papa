@@ -18,8 +18,8 @@ const Home = () => {
   };
   return (
     <>
-      <div className="flex flex-col md:flex-row w-full">
-        <div className=" md:border-r md:w-1/3">
+      <div className="voucher_Home grid grid-cols-4 gap-8 md:flex-row w-full">
+        <div className=" md:border-r  ">
           <ul className="flex-row flex-wrap py-6 pr-2 flex md:flex-col gap-4 text-xs">
             <li className="flex justify-between items-center gap-3 relative">
               <Link to={"/womanfasion"}>Woman’s Fashion</Link>

@@ -37,3 +37,10 @@
   fill: var(--tw-color-secondary);
   stroke: white;
 }
+
+.voucher_Home .slick-slider {
+  grid-column: span 3;
+}
+.voucher_Home .slide {
+  display: inline-flex !important;
+}
