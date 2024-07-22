@@ -99,9 +99,8 @@ const Home = () => {
             </li>
           </ul>
         </div>
-        {/* <VoucherHome /> */}
+        <VoucherHome />
       </div>
-      <VoucherHome />
 
       <FlashSale />
       <Category />
