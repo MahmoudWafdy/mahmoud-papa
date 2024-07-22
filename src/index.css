@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+@layer base {
+  :root {
+    --color-secondary: 219 68 68;
+    /* ... */
+  }
+}
+
+/* .slick-slide {
+  width: auto !important;
+}
+.voucher {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+} */
+:root {
+  --tw-color-secondary: #db4444;
+}
+
+.svg_container:hover .hover_svg_circle {
+  fill: var(--tw-color-secondary);
+}
+.svg_container:hover .hover_svg_path {
+  stroke: white;
+}
+.svg_container:hover .hover_svg {
+  fill: var(--tw-color-secondary);
+}
+
+.clickedButton {
+  fill: var(--tw-color-secondary);
+  stroke: white;
+}

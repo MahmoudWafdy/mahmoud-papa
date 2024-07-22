@@ -1,0 +1,5 @@
+.bestSelling {
+  ::-webkit-scrollbar {
+    height: 0px; /* set scrollbar height */
+  }
+}

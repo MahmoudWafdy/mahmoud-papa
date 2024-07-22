@@ -1,0 +1,9 @@
+.clickedSvgStyle {
+  fill: var(--tw-color-secondary); /* change the fill color to white */
+  stroke: #333; /* change the stroke color to dark gray */
+  transform: scale(1.1); /* scale the SVG up slightly */
+}
+
+.clickedSvgPathStyle {
+  stroke: white;
+}
