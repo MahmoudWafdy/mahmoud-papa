@@ -91,14 +91,14 @@ const ProductCard = ({
         className={
           shrink
             ? `w-56  border-solid flex flex-col flex-shrink-0`
-            : `w-56  border-solid`
+            : `w-11/12  md:w-56  border-solid`
         }
       >
-        <div className="group relative bg-gray-100 h-54">
+        <div className="group relative bg-gray-100 h-40 md:h-56 flex justify-center">
           <img
             src={images[0]}
             alt={title}
-            className="w-full h-full object-contain object-center hover:scale-110 hover:shadow-md hover:opacity-95 transition duration-300 ease-in-out"
+            className="object-cover h-full object-center hover:scale-110 hover:shadow-md hover:opacity-95 transition duration-300 ease-in-out"
           />
           <div className="absolute top-2 left-2 py-1 px-3 rounded bg-secondary text-white">
             {discountPercentage ? `-${discountPercentage}% ` : ""}
@@ -255,6 +255,7 @@ const ProductCard = ({
               </svg>
             </button>
           </div>
+
           <div
             className="absolute left-0 right-0 bottom-0"
             onClick={(event) => {
