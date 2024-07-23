@@ -8,7 +8,7 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true, // Enable automatic sliding
-  autoplaySpeed: 3000, // Adjust the speed as needed
+  autoplaySpeed: 4000, // Adjust the speed as needed
   arrows: false, // Enable left and right arrows for control
 };
 const slides = [
@@ -35,8 +35,11 @@ const slides = [
 const VoucherHome = () => {
   return (
     <Slider {...settings}>
-      {slides.map((slide, index) => (
-        <div className="slide bg-black  md:mt-8 w-full " key={slide.index}>
+      {slides.map((slide) => (
+        <div
+          className="slide bg-black md:mt-8 w-full items-center"
+          key={slide.index}
+        >
           <div
             className=" inline-flex flex-col justify-center gap-2 items-start text-white text-xs pt-2
            pl-2  md:pt-8 md:pl-8 md:min-h-[335px]"
@@ -46,7 +49,7 @@ const VoucherHome = () => {
               <p>{slide.title}</p>
             </div>
 
-            <p className="justify-self-start text-2xl md:text-4xl">
+            <p className="justify-self-start text-xl md:text-4xl">
               {slide.description}
             </p>
             <Link
@@ -72,7 +75,7 @@ const VoucherHome = () => {
             </Link>
           </div>
 
-          <div className=" p-2 md:py-4 md:pr-8">
+          <div className=" p-2 md:py-4 md:pr-8 w-2/3 md:w-1/2">
             <img src={slide.image} alt="iphone" />
           </div>
         </div>

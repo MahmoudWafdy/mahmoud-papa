@@ -11,12 +11,13 @@ const Footer = () => {
             <a href="#">Get 10% off your first order</a>
             <form className="flex relative">
               <input
-                className="h-full p-2  z-0 bg-transparent border-white border-solid border-2 outline-none"
+                className="h-full w-4/5 sm-md:w-full placeholder:text-xs p-1 sm-md:p-2 z-0 bg-transparent border-white border-solid border-2 outline-none"
                 type="text"
-                placeholder="Enter you e-mail"
+                placeholder="Enter e-mail"
               ></input>
-              <button className="-translate-x-8 z-10">
+              <button className="-translate-x-7 z-10 ">
                 <svg
+                  className="w-5 h-5"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
