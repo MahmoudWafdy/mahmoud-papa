@@ -75,7 +75,7 @@ const FlashSaleSlider = () => {
           />
         ))}
       </Slider>
-      <button className="bg-secondary text-white py-3 px-6 mx-auto ">
+      <button className="bg-secondary text-white py-3 px-6 mx-auto mt-8">
         <Link to={"category/electronics"}>View All Products</Link>
       </button>
     </div>
