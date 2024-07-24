@@ -28,7 +28,7 @@ const settings = {
       },
     },
     {
-      breakpoint: 1280, // large screen
+      breakpoint: 1080, // large screen
       settings: {
         slidesToShow: 4,
       },
