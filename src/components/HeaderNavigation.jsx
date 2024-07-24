@@ -1,16 +1,189 @@
 import { Link, NavLink } from "react-router-dom";
 import SearchInput from "./SearchInput";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { WishCartListContext } from "./WishCartListContext";
 
 const HeaderNavigation = () => {
   const { wishListCount, cartListCount } = useContext(WishCartListContext);
+
+  const [showMobileNav, setShowMobileNav] = useState(false);
+
+  const handleClickMenu = () => {
+    setShowMobileNav(!showMobileNav);
+    document.querySelector(".nav_link--mobile").style.display = "flex";
+    document.querySelector(".burger_menu").style.display = "none";
+    document.querySelector(".close_menu").style.display = "block";
+  };
+  const handleClickCloseButton = () => {
+    document.querySelector(".nav_link--mobile").style.display = "none";
+    document.querySelector(".close_menu").style.display = "none";
+    document.querySelector(".burger_menu").style.display = "block";
+    setShowMobileNav(false);
+  };
+  // const handleOutsideClick = (event) => {
+  //   if (!event.target.closest(".nav_link--mobile")) {
+  //     setShowMobileNav(false);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   document.addEventListener("click", handleOutsideClick);
+  //   return () => {
+  //     document.removeEventListener("click", handleOutsideClick);
+  //   };
+  // }, []);
+
   return (
     <div className="w-full border-b-2 py-3 ">
-      <div className="container mx-auto px-2  flex  gap-2 flex-col items-center justify-between text-xs md:px-5 md:text-sm md:flex-row">
-        <div className="flex gap-2 w-full justify-between py-3 order-2 md:order-1 md:py-0">
-          <p>Exclusive</p>
-          <ul className="flex gap-2">
+      <div className="container relative mx-auto px-2 flex gap-2 items-center justify-between text-xs md:px-5 md:text-sm">
+        <button
+          htmlFor="menu"
+          className="burger_menu "
+          onClick={handleClickMenu}
+        >
+          <i className="material-icons text-4xl inline-block">menu</i>
+        </button>
+        <button
+          className="close_menu self-start hidden "
+          onClick={handleClickCloseButton}
+        >
+          <i className="material-icons text-4xl">close</i>
+        </button>
+        <div
+          className={`nav_link--mobile md:hidden absolute top-full left-0 right-1/2 bg-gray-950
+         text-gray-50 flex gap-2 flex-col p-4 opacity-0 transition-opacity ease-in-out duration-300 ${
+           showMobileNav ? "show" : "hide"
+         }`}
+        >
+          <ul className="flex flex-col gap-2 text-sm ">
+            <li>
+              <NavLink
+                to={"/"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-2 border-gray-400 custom_shadow"
+                    : " custom_shadow"
+                }
+              >
+                Home
+              </NavLink>{" "}
+            </li>
+            <li>
+              <NavLink
+                to={"/Contact"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-2 border-gray-400 custom_shadow"
+                    : "custom_shadow"
+                }
+              >
+                Contact
+              </NavLink>{" "}
+            </li>
+            <li>
+              <NavLink
+                to={"/About"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-2 border-gray-400 custom_shadow"
+                    : "custom_shadow"
+                }
+              >
+                About
+              </NavLink>{" "}
+            </li>
+            <li>
+              <NavLink
+                to={"/SignUp"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-2 border-gray-400 custom_shadow"
+                    : "custom_shadow"
+                }
+              >
+                Sign Up
+              </NavLink>{" "}
+            </li>
+          </ul>
+
+          <p className=" font-semibold text-base my-3 ">Exclusive</p>
+
+          <ul className="flex flex-wrap flex-col gap-2 text-sm">
+            <li className="flex justify-between items-center gap-3 relative">
+              <Link to={"/womanfasion"}>Woman’s Fashion</Link>
+              <button className="womanDropDown">
+                <svg
+                  width="8"
+                  height="13"
+                  viewBox="0 0 8 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.95 6.63597L0 1.68597L1.414 0.271973L7.778 6.63597L1.414 13L0 11.586L4.95 6.63597Z"
+                    fill="black"
+                  />
+                </svg>
+              </button>
+
+              <ul
+                className={`absolute left-[106%] top-2 w-[90px] bg-gray-800 text-white p-2 pr-3 transition-all duration-500 ease-in-out overflow-hidden ${"opacity-0 max-h-0"}`}
+              >
+                <li>
+                  <Link to={"/category/Shoes"}>Shoes</Link>
+                </li>
+                <li>
+                  <Link to={"/category/Shoes"}>T-shirt</Link>
+                </li>
+                <li>
+                  <Link to={"/category/Shoes"}>bags</Link>
+                </li>
+              </ul>
+            </li>
+            <li className="flex justify-between items-center gap-3 ">
+              <Link to={"/mensfasion"}>Men’s Fashion</Link>
+              <button className="">
+                <svg
+                  width="8"
+                  height="13"
+                  viewBox="0 0 8 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.95 6.63597L0 1.68597L1.414 0.271973L7.778 6.63597L1.414 13L0 11.586L4.95 6.63597Z"
+                    fill="black"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <Link to={"/electronics"}>Electronics</Link>
+            </li>
+            <li>
+              <Link to={"/homelifestyle"}>Home & Lifestyle</Link>
+            </li>
+            <li>
+              <Link to={"/medicin"}>Medicine</Link>
+            </li>
+            <li>
+              <Link to={"/sports"}>Sports & Outdoor</Link>
+            </li>
+            <li>
+              <Link to={"/baby"}>Baby’s & Toys</Link>
+            </li>
+            <li>
+              <Link to={"/groceries"}>Groceries & Pets</Link>
+            </li>
+            <li>
+              <Link to={"/health"}>Health & Beauty</Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="hidden md:flex gap-2 md:w-full md:justify-between py-3 md:order-1 md:py-0 ">
+          <p className="order-2 md:order-1">Exclusive</p>
+          <ul className=" md:flex md:gap-2 md:order-2">
             <li>
               <NavLink
                 to={"/"}
