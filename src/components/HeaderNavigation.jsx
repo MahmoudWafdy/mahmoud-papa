@@ -90,7 +90,7 @@ const HeaderNavigation = () => {
 
           <p className=" font-semibold text-base my-3 underline">Exclusive</p>
 
-          <ul className=" flex flex-wrap flex-col gap-2 text-sm">
+          <ul className=" flex flex-wrap flex-col gap-1 text-sm">
             <li className="flex justify-between items-center gap-3 relative">
               <Link to={"/womanfasion"}>Woman’s Fashion</Link>
               <button className="womanDropDown">
