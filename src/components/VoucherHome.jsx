@@ -13,19 +13,19 @@ const settings = {
 };
 const slides = [
   {
-    logo: "../src/img/apple-logo.png",
+    logo: "apple-logo.png",
     title: "Iphone 14 Series",
     description: "Up to 10% off Voucher",
     image: "../src/img/iphone.png",
   },
   {
-    log: "../src/img/samsung-logo.png",
+    log: "samsung-logo.png",
     title: "Samsung Galaxy S21",
     description: "Limited Time Offer until next month",
     image: "../src/img/samsung.png",
   },
   {
-    logo: "../src/img/apple-logo.png",
+    logo: "apple-logo.png",
     title: "Iphone 14 Series",
     description: "Up to 10% off Voucher",
     image: "../src/img/iphone.png",
