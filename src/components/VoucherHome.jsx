@@ -34,12 +34,9 @@ const slides = [
 
 const VoucherHome = () => {
   return (
-    <Slider {...settings}>
+    <Slider {...settings} className="bg-black">
       {slides.map((slide) => (
-        <div
-          className="slide bg-black md:mt-8 w-full items-center"
-          key={slide.index}
-        >
+        <div className="slide  md:mt-8 w-full items-center" key={slide.index}>
           <div
             className=" inline-flex flex-col justify-center gap-2 items-start text-white text-xs
            pl-2  md:pt-8 md:pl-8 md:min-h-[335px]"

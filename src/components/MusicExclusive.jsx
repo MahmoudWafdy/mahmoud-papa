@@ -74,7 +74,7 @@ const MusicExclusive = () => {
         <div className="p-2 md:py-4 md:pr-8 order-1 md:order-2">
           {/* <img src="../src/img/bg-shadow1.jpg" alt="shadow" /> */}
           <img
-            src="../src/img/music-section.png"
+            src="music-section.png"
             alt="iphone"
             className="rounded-full "
             style={{
