@@ -1,37 +1,21 @@
 import { Link, NavLink } from "react-router-dom";
 import SearchInput from "./SearchInput";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { WishCartListContext } from "./WishCartListContext";
 
 const HeaderNavigation = () => {
   const { wishListCount, cartListCount } = useContext(WishCartListContext);
 
-  const [showMobileNav, setShowMobileNav] = useState(false);
-
   const handleClickMenu = () => {
-    setShowMobileNav(!showMobileNav);
-    document.querySelector(".nav_link--mobile").style.display = "flex";
+    document.querySelector(".nav_link--mobile").style.opacity = 1;
     document.querySelector(".burger_menu").style.display = "none";
     document.querySelector(".close_menu").style.display = "block";
   };
   const handleClickCloseButton = () => {
-    document.querySelector(".nav_link--mobile").style.display = "none";
+    document.querySelector(".nav_link--mobile").style.opacity = 0;
     document.querySelector(".close_menu").style.display = "none";
     document.querySelector(".burger_menu").style.display = "block";
-    setShowMobileNav(false);
   };
-  // const handleOutsideClick = (event) => {
-  //   if (!event.target.closest(".nav_link--mobile")) {
-  //     setShowMobileNav(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   document.addEventListener("click", handleOutsideClick);
-  //   return () => {
-  //     document.removeEventListener("click", handleOutsideClick);
-  //   };
-  // }, []);
 
   return (
     <div className="w-full border-b-2 py-3 ">
@@ -51,9 +35,7 @@ const HeaderNavigation = () => {
         </button>
         <div
           className={`nav_link--mobile md:hidden absolute top-full left-0 right-1/2 bg-gray-950
-         text-gray-50 flex gap-2 flex-col p-4 opacity-0 transition-opacity ease-in-out duration-300 ${
-           showMobileNav ? "show" : "hide"
-         }`}
+         text-gray-50 flex gap-2 flex-col p-4 opacity-0 transition-all ease-in-out duration-300 `}
         >
           <ul className="flex flex-col gap-2 text-sm ">
             <li>
