@@ -42,9 +42,7 @@ const HeaderNavigation = () => {
               <NavLink
                 to={"/"}
                 className={({ isActive }) =>
-                  isActive
-                    ? "border-b-2 border-gray-400 custom_shadow"
-                    : " custom_shadow"
+                  isActive ? "border-b-2 border-gray-400 " : " "
                 }
               >
                 Home
@@ -54,9 +52,7 @@ const HeaderNavigation = () => {
               <NavLink
                 to={"/Contact"}
                 className={({ isActive }) =>
-                  isActive
-                    ? "border-b-2 border-gray-400 custom_shadow"
-                    : "custom_shadow"
+                  isActive ? "border-b-2 border-gray-400 " : ""
                 }
               >
                 Contact
@@ -66,9 +62,7 @@ const HeaderNavigation = () => {
               <NavLink
                 to={"/About"}
                 className={({ isActive }) =>
-                  isActive
-                    ? "border-b-2 border-gray-400 custom_shadow"
-                    : "custom_shadow"
+                  isActive ? "border-b-2 border-gray-400 " : ""
                 }
               >
                 About
@@ -78,9 +72,7 @@ const HeaderNavigation = () => {
               <NavLink
                 to={"/SignUp"}
                 className={({ isActive }) =>
-                  isActive
-                    ? "border-b-2 border-gray-400 custom_shadow"
-                    : "custom_shadow"
+                  isActive ? "border-b-2 border-gray-400 " : ""
                 }
               >
                 Sign Up
