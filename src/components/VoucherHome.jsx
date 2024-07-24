@@ -41,7 +41,7 @@ const VoucherHome = () => {
           key={slide.index}
         >
           <div
-            className=" inline-flex flex-col justify-center gap-2 items-start text-white text-xs pt-2
+            className=" inline-flex flex-col justify-center gap-2 items-start text-white text-xs
            pl-2  md:pt-8 md:pl-8 md:min-h-[335px]"
           >
             <div className="flex justify-start items-center w-full gap-2 md:gap-5">

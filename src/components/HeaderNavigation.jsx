@@ -22,19 +22,19 @@ const HeaderNavigation = () => {
       <div className="container relative mx-auto px-2 flex gap-2 items-center justify-between text-xs md:px-5 md:text-sm">
         <button
           htmlFor="menu"
-          className="burger_menu "
+          className="burger_menu"
           onClick={handleClickMenu}
         >
           <i className="material-icons text-4xl inline-block">menu</i>
         </button>
         <button
-          className="close_menu self-start hidden "
+          className="close_menu self-start hidden md:hidden"
           onClick={handleClickCloseButton}
         >
           <i className="material-icons text-4xl">close</i>
         </button>
         <div
-          className={`nav_link--mobile md:hidden absolute top-full left-0 right-1/2 bg-gray-950
+          className={` nav_link--mobile md:hidden absolute top-full left-0 right-1/2 bg-gray-950
          text-gray-50 flex gap-2 flex-col p-4 opacity-0 transition-all ease-in-out duration-300 `}
         >
           <ul className="flex flex-col gap-2 text-sm ">
@@ -88,9 +88,9 @@ const HeaderNavigation = () => {
             </li>
           </ul>
 
-          <p className=" font-semibold text-base my-3 ">Exclusive</p>
+          <p className=" font-semibold text-base my-3 underline">Exclusive</p>
 
-          <ul className="flex flex-wrap flex-col gap-2 text-sm">
+          <ul className=" flex flex-wrap flex-col gap-2 text-sm">
             <li className="flex justify-between items-center gap-3 relative">
               <Link to={"/womanfasion"}>Woman’s Fashion</Link>
               <button className="womanDropDown">
@@ -165,7 +165,7 @@ const HeaderNavigation = () => {
 
         <div className="hidden md:flex gap-2 md:w-full md:justify-between py-3 md:order-1 md:py-0 ">
           <p className="order-2 md:order-1">Exclusive</p>
-          <ul className=" md:flex md:gap-2 md:order-2">
+          <ul className="hidden md:flex md:gap-2 md:order-2">
             <li>
               <NavLink
                 to={"/"}

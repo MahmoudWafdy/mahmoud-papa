@@ -40,6 +40,7 @@
 
 .voucher_Home .slick-slider {
   grid-column: span 3;
+  height: 100%;
 }
 .voucher_Home .slide {
   display: inline-flex !important;
@@ -123,4 +124,13 @@
 .nav_link--mobile.hide {
   opacity: 0;
   pointer-events: none;
+}
+
+@media (min-width: 767px) {
+  .burger_menu {
+    display: none !important;
+  }
+  .burger_menu {
+    display: none !important;
+  }
 }
