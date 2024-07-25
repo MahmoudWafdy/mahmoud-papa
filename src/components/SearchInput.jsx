@@ -24,6 +24,10 @@ const SearchInput = () => {
       setISOpenSearchResult(false);
     }
   }, [searchResults]);
+
+  const handleLinkClick = () => {
+    setISOpenSearchResult(false);
+  };
   return (
     <form className="relative flex min-w-10 min-h-8 w-full items-center px-3  justify-end gap-2 rounded-full bg-gray-50 shadow md:w-[200px]">
       {isOpenSearchResult && (
@@ -48,6 +52,7 @@ const SearchInput = () => {
               }}
               key={product.id}
               className="w-full py-2 px-4 hover:bg-gray-100"
+              onClick={handleLinkClick}
             >
               {product.title}
             </Link>
