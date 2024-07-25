@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import SearchInput from "./SearchInput";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { WishCartListContext } from "./WishCartListContext";
 
 const HeaderNavigation = () => {
@@ -16,6 +16,25 @@ const HeaderNavigation = () => {
     document.querySelector(".close_menu").style.display = "none";
     document.querySelector(".burger_menu").style.display = "block";
   };
+  const handleLinkClick = () => {
+    document.querySelector(".nav_link--mobile").style.opacity = 0;
+    document.querySelector(".close_menu").style.display = "none";
+    document.querySelector(".burger_menu").style.display = "block";
+  };
+  // const handleOutsideClick = (e) => {
+  //   if (!e.target.closest(".nav_link--mobile")) {
+  //     document.querySelector(".nav_link--mobile").style.opacity = 0;
+  //     document.querySelector(".close_menu").style.display = "none";
+  //     document.querySelector(".burger_menu").style.display = "block";
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   document.addEventListener("click", handleOutsideClick);
+  //   return () => {
+  //     document.removeEventListener("click", handleOutsideClick);
+  //   };
+  // }, []);
 
   return (
     <div className="w-full border-b-2 py-3 ">
@@ -34,7 +53,7 @@ const HeaderNavigation = () => {
           <i className="material-icons text-4xl">close</i>
         </button>
         <div
-          className={` nav_link--mobile md:hidden absolute top-full left-0 right-1/2 bg-gray-950
+          className={`nav_link--mobile md:hidden absolute top-full left-0 right-1/2 bg-gray-950
          text-gray-50 flex gap-2 flex-col p-4 opacity-0 transition-all ease-in-out duration-300 z-50 `}
         >
           <ul className="flex flex-col gap-2 text-sm ">
@@ -44,6 +63,7 @@ const HeaderNavigation = () => {
                 className={({ isActive }) =>
                   isActive ? "border-b-2 border-gray-400" : ""
                 }
+                onClick={handleLinkClick}
               >
                 Home
               </NavLink>
@@ -54,6 +74,7 @@ const HeaderNavigation = () => {
                 className={({ isActive }) =>
                   isActive ? "border-b-2 border-gray-400 " : ""
                 }
+                onClick={handleLinkClick}
               >
                 Contact
               </NavLink>
@@ -64,6 +85,7 @@ const HeaderNavigation = () => {
                 className={({ isActive }) =>
                   isActive ? "border-b-2 border-gray-400 " : ""
                 }
+                onClick={handleLinkClick}
               >
                 About
               </NavLink>
@@ -74,6 +96,7 @@ const HeaderNavigation = () => {
                 className={({ isActive }) =>
                   isActive ? "border-b-2 border-gray-400 " : ""
                 }
+                onClick={handleLinkClick}
               >
                 Sign Up
               </NavLink>
@@ -84,7 +107,9 @@ const HeaderNavigation = () => {
 
           <ul className=" flex flex-wrap flex-col gap-1 text-sm">
             <li className="flex justify-between items-center gap-3 relative">
-              <Link to={"/womanfasion"}>Woman’s Fashion</Link>
+              <Link to={"/womanfasion"} onClick={handleLinkClick}>
+                Woman’s Fashion
+              </Link>
               <button className="womanDropDown">
                 <svg
                   width="8"
@@ -115,7 +140,9 @@ const HeaderNavigation = () => {
               </ul>
             </li>
             <li className="flex justify-between items-center gap-3 ">
-              <Link to={"/mensfasion"}>Men’s Fashion</Link>
+              <Link to={"/mensfasion"} onClick={handleLinkClick}>
+                Men’s Fashion
+              </Link>
               <button className="">
                 <svg
                   width="8"
@@ -132,25 +159,39 @@ const HeaderNavigation = () => {
               </button>
             </li>
             <li>
-              <Link to={"/electronics"}>Electronics</Link>
+              <Link to={"/electronics"} onClick={handleLinkClick}>
+                Electronics
+              </Link>
             </li>
             <li>
-              <Link to={"/homelifestyle"}>Home & Lifestyle</Link>
+              <Link to={"/homelifestyle"} onClick={handleLinkClick}>
+                Home & Lifestyle
+              </Link>
             </li>
             <li>
-              <Link to={"/medicin"}>Medicine</Link>
+              <Link to={"/medicin"} onClick={handleLinkClick}>
+                Medicine
+              </Link>
             </li>
             <li>
-              <Link to={"/sports"}>Sports & Outdoor</Link>
+              <Link to={"/sports"} onClick={handleLinkClick}>
+                Sports & Outdoor
+              </Link>
             </li>
             <li>
-              <Link to={"/baby"}>Baby’s & Toys</Link>
+              <Link to={"/baby"} onClick={handleLinkClick}>
+                Baby’s & Toys
+              </Link>
             </li>
             <li>
-              <Link to={"/groceries"}>Groceries & Pets</Link>
+              <Link to={"/groceries"} onClick={handleLinkClick}>
+                Groceries & Pets
+              </Link>
             </li>
             <li>
-              <Link to={"/health"}>Health & Beauty</Link>
+              <Link to={"/health"} onClick={handleLinkClick}>
+                Health & Beauty
+              </Link>
             </li>
           </ul>
         </div>

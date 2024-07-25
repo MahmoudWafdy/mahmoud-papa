@@ -28,11 +28,25 @@ const SearchInput = () => {
   const handleLinkClick = () => {
     setISOpenSearchResult(false);
   };
+
+  const handleOutsideClick = (e) => {
+    if (!e.target.closest(".search-results")) {
+      setISOpenSearchResult(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleOutsideClick);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
+
   return (
     <form className="relative flex min-w-10 min-h-8 w-full items-center px-3  justify-end gap-2 rounded-full bg-gray-50 shadow md:w-[200px]">
       {isOpenSearchResult && (
         <div
-          className="absolute top-[120%] left-0 w-[200%] min-h-20 bg-gray-50 shadow-md z-50 flex flex-col justify-center
+          className="search-results absolute top-[120%] left-0 w-[200%] min-h-20 bg-gray-50 shadow-md z-50 flex flex-col justify-center
          items-center rounded"
         >
           {searchResults.map((product) => (
