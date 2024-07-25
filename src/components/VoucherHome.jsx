@@ -41,7 +41,7 @@ const slides = [
 const VoucherHome = () => {
   return (
     <Slider {...settings}>
-      {slides.map((slide) => (
+      {slides.map((slide, index) => (
         <div
           className="slide  md:mt-8 w-full items-center p-5"
           key={slide.index}

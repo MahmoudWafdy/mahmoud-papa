@@ -16,14 +16,14 @@ const SearchInput = () => {
     } else {
       setSearchResults([]);
     }
-    useEffect(() => {
-      if (searchResults.length > 0) {
-        setISOpenSearchResult(true);
-      } else {
-        setISOpenSearchResult(false);
-      }
-    }, [searchResults]);
   };
+  useEffect(() => {
+    if (searchResults.length > 0) {
+      setISOpenSearchResult(true);
+    } else {
+      setISOpenSearchResult(false);
+    }
+  }, [searchResults]);
   return (
     <form className="relative flex min-w-10 min-h-8 w-full items-center px-3  justify-end gap-2 rounded-full bg-gray-50 shadow md:w-[200px]">
       {isOpenSearchResult && (
@@ -34,8 +34,20 @@ const SearchInput = () => {
           {searchResults.map((product) => (
             <Link
               to={`/${product.category}/${product.title}`}
+              state={{
+                product: {
+                  images: product.images,
+                  title: product.title,
+                  discountPercentage: product.discountPercentage,
+                  price: product.price,
+                  review: product.review,
+                  category: product.category,
+                  description: product.description,
+                  stock: product.stock,
+                },
+              }}
               key={product.id}
-              className="w-full  py-2 px-4 hover:bg-gray-100"
+              className="w-full py-2 px-4 hover:bg-gray-100"
             >
               {product.title}
             </Link>
