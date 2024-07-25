@@ -42,11 +42,13 @@ const HeaderNavigation = () => {
               <NavLink
                 to={"/"}
                 className={({ isActive }) =>
-                  isActive ? "border-b-2 border-gray-400 " : " "
+                  isActive
+                    ? "border-b-2 border-gray-400 "
+                    : " w-full h-full block"
                 }
               >
                 Home
-              </NavLink>{" "}
+              </NavLink>
             </li>
             <li>
               <NavLink
@@ -56,7 +58,7 @@ const HeaderNavigation = () => {
                 }
               >
                 Contact
-              </NavLink>{" "}
+              </NavLink>
             </li>
             <li>
               <NavLink
@@ -66,7 +68,7 @@ const HeaderNavigation = () => {
                 }
               >
                 About
-              </NavLink>{" "}
+              </NavLink>
             </li>
             <li>
               <NavLink
@@ -76,7 +78,7 @@ const HeaderNavigation = () => {
                 }
               >
                 Sign Up
-              </NavLink>{" "}
+              </NavLink>
             </li>
           </ul>
 

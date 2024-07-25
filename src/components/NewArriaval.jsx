@@ -49,7 +49,7 @@ const NewArrival = () => {
         </div>
         <div className="relative grid justify-items-center  md:col-start-2 md:col-end-3 md:row-start-2 md:row-end-3  bg-black ">
           <img
-            src="../src/img/speakers.png"
+            src="speakers.png"
             alt="ps5"
             className="w-1/2 h-auto self-center "
           />
@@ -63,7 +63,7 @@ const NewArrival = () => {
         </div>
         <div className="relative grid justify-items-center md:col-start-3 md:col-end-4 md:row-start-2 bg-black ">
           <img
-            src="../src/img/perfume.png"
+            src="/src/perfume.png"
             alt="ps5"
             className="w-1/2 h-auto self-center"
           />

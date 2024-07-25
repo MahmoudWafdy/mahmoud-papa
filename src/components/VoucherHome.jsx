@@ -30,16 +30,25 @@ const slides = [
     description: "Up to 10% off Voucher",
     image: "../src/img/iphone.png",
   },
+  {
+    log: "samsung-logo.png",
+    title: "Samsung Galaxy S21",
+    description: "Limited Time Offer until next month",
+    image: "../src/img/samsung.png",
+  },
 ];
 
 const VoucherHome = () => {
   return (
-    <Slider {...settings} className="bg-black">
+    <Slider {...settings}>
       {slides.map((slide) => (
-        <div className="slide  md:mt-8 w-full items-center" key={slide.index}>
+        <div
+          className="slide  md:mt-8 w-full items-center p-5"
+          key={slide.index}
+        >
           <div
             className=" inline-flex flex-col justify-center gap-2 items-start text-white text-xs
-           pl-2  md:pt-8 md:pl-8 md:min-h-[335px]"
+           min-h-[200px] md:pt-8 md:pl-8 md:min-h-[350px]"
           >
             <div className="flex justify-start items-center w-full gap-2 md:gap-5">
               <img src={slide.logo} alt="apple logo" className="w-8 md:w-10" />
@@ -72,7 +81,7 @@ const VoucherHome = () => {
             </Link>
           </div>
 
-          <div className=" p-2 md:py-4 md:pr-8 w-2/3 md:w-1/2">
+          <div className="md:py-4 md:pr-8 w-2/3 md:w-1/2">
             <img src={slide.image} alt="iphone" />
           </div>
         </div>
