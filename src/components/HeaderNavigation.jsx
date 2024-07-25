@@ -35,16 +35,14 @@ const HeaderNavigation = () => {
         </button>
         <div
           className={` nav_link--mobile md:hidden absolute top-full left-0 right-1/2 bg-gray-950
-         text-gray-50 flex gap-2 flex-col p-4 opacity-0 transition-all ease-in-out duration-300 `}
+         text-gray-50 flex gap-2 flex-col p-4 opacity-0 transition-all ease-in-out duration-300 z-50 `}
         >
           <ul className="flex flex-col gap-2 text-sm ">
             <li>
               <NavLink
                 to={"/"}
                 className={({ isActive }) =>
-                  isActive
-                    ? "border-b-2 border-gray-400 "
-                    : " w-full h-full block"
+                  isActive ? "border-b-2 border-gray-400" : ""
                 }
               >
                 Home

@@ -136,25 +136,11 @@
     rgba(121, 114, 121, 1) 6%,
     rgba(4, 4, 4, 0.9836309523809523) 100%
   );
-  /* background: linear-gradient(to bottom, #1f1e1e, #333232);
-  background-size: 100% 300px;
-  background-position: 0% 100%; */
 }
 
 .nav_link--mobile {
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
-  pointer-events: none;
-}
-
-.nav_link--mobile.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.nav_link--mobile.hide {
-  opacity: 0;
-  pointer-events: none;
 }
 
 @media (min-width: 767px) {

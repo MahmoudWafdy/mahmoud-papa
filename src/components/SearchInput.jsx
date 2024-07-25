@@ -1,11 +1,54 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 const SearchInput = () => {
+  const [isOpenSearchResult, setISOpenSearchResult] = useState(false);
+  const [search, setSearch] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleSearchInputChange = (e) => {
+    const searchTerm = e.target.value;
+    setSearch(searchTerm);
+    if (searchTerm.length > 3) {
+      fetch(`https://dummyjson.com/products/search?q=${searchTerm}`)
+        .then((res) => res.json())
+        .then((products) => setSearchResults(products.products));
+    } else {
+      setSearchResults([]);
+    }
+    useEffect(() => {
+      if (searchResults.length > 0) {
+        setISOpenSearchResult(true);
+      } else {
+        setISOpenSearchResult(false);
+      }
+    }, [searchResults]);
+  };
   return (
-    <form className="flex min-w-10 h-8 w-full items-center px-3  justify-end gap-2 rounded-full bg-gray-100 shadow md:w-[200px]">
+    <form className="relative flex min-w-10 min-h-8 w-full items-center px-3  justify-end gap-2 rounded-full bg-gray-50 shadow md:w-[200px]">
+      {isOpenSearchResult && (
+        <div
+          className="absolute top-[120%] left-0 w-[200%] min-h-20 bg-gray-50 shadow-md z-50 flex flex-col justify-center
+         items-center rounded"
+        >
+          {searchResults.map((product) => (
+            <Link
+              to={`/${product.category}/${product.title}`}
+              key={product.id}
+              className="w-full  py-2 px-4 hover:bg-gray-100"
+            >
+              {product.title}
+            </Link>
+          ))}
+        </div>
+      )}
       <input
         className="h-full w-full max-w-md rounded-full outline-none placeholder:text-xs bg-transparent"
         type="text"
         name="search"
         placeholder="What are you looking for?"
+        value={search}
+        onChange={handleSearchInputChange}
       />
       <svg
         width="18"
