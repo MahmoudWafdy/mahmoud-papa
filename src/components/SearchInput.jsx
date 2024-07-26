@@ -74,7 +74,7 @@ const SearchInput = () => {
         </div>
       )}
       <input
-        className="h-full w-full max-w-md rounded-full outline-none placeholder:text-xs bg-transparent"
+        className="h-full w-full max-w-md rounded-full outline-none text-xs bg-transparent "
         type="text"
         name="search"
         placeholder="What are you looking for?"

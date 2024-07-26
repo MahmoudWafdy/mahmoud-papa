@@ -13,28 +13,28 @@ const settings = {
 };
 const slides = [
   {
-    logo: "apple-logo.png",
+    logo: "/images/apple-logo.png",
     title: "Iphone 14 Series",
     description: "Up to 10% off Voucher",
-    image: "../src/img/iphone.png",
+    image: "/images/iphone.png",
   },
   {
-    log: "samsung-logo.png",
+    log: "/images/samsung1.png",
     title: "Samsung Galaxy S21",
     description: "Limited Time Offer until next month",
-    image: "../src/img/samsung.png",
+    image: "/images/samsung.png",
   },
   {
-    logo: "apple-logo.png",
+    logo: "/images/apple-logo.png",
     title: "Iphone 14 Series",
     description: "Up to 10% off Voucher",
-    image: "../src/img/iphone.png",
+    image: "/images/iphone.png",
   },
   {
-    log: "samsung-logo.png",
+    log: "/images/samsung1.png",
     title: "Samsung Galaxy S21",
     description: "Limited Time Offer until next month",
-    image: "../src/img/samsung.png",
+    image: "/images/samsung.png",
   },
 ];
 
@@ -51,7 +51,12 @@ const VoucherHome = () => {
            min-h-[200px] md:pt-8 md:pl-8 md:min-h-[350px]"
           >
             <div className="flex justify-start items-center w-full gap-2 md:gap-5">
-              <img src={slide.logo} alt="apple logo" className="w-8 md:w-10" />
+              <img
+                src={slide.logo}
+                alt="apple logo"
+                className="w-8 md:w-10"
+                loading="lazy"
+              />
               <p>{slide.title}</p>
             </div>
 
@@ -82,7 +87,7 @@ const VoucherHome = () => {
           </div>
 
           <div className="md:py-4 md:pr-8 w-2/3 md:w-1/2">
-            <img src={slide.image} alt="iphone" />
+            <img src={slide.image} alt="iphone" loading="lazy" />
           </div>
         </div>
       ))}
