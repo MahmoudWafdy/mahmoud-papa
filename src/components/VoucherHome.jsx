@@ -48,7 +48,7 @@ const VoucherHome = () => {
         >
           <div
             className=" inline-flex flex-col justify-center gap-2 items-start text-white text-xs
-            min-h-[200px] md:pt-8 md:pl-8 md:min-h-[350px]"
+            min-h-[200px] md:pt-8 md:pl-8 md:min-h-[350px] lg:min-h[380px]"
           >
             <div className="flex justify-start items-center w-full gap-2 md:gap-5">
               <img

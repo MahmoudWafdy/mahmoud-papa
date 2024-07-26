@@ -15,7 +15,7 @@ const NewArrival = () => {
       <div className="new-arrival mt-10 mb-5 grid grid-cols-1 md:grid-rows-2 gap-2 md:grid-cols-[repeat(auto-fill,_minmax[200px,_1fr])]">
         <div className=" relative md:row-span-2  md:col-span-1 bg-black ">
           <img
-            src="../src/img/ps5.png"
+            src="/images/ps5.png"
             alt="ps5"
             className="w-full h-full object-contain object-bottom"
           />
@@ -49,7 +49,7 @@ const NewArrival = () => {
         </div>
         <div className="relative grid justify-items-center  md:col-start-2 md:col-end-3 md:row-start-2 md:row-end-3  bg-black ">
           <img
-            src="speakers.png"
+            src="/images/speakers.png"
             alt="ps5"
             className="w-1/2 h-auto self-center "
           />
@@ -63,7 +63,7 @@ const NewArrival = () => {
         </div>
         <div className="relative grid justify-items-center md:col-start-3 md:col-end-4 md:row-start-2 bg-black ">
           <img
-            src="/src/perfume.png"
+            src="/images/perfume.png"
             alt="ps5"
             className="w-1/2 h-auto self-center"
           />

@@ -156,22 +156,18 @@ const CheckOut = () => {
               bank
               <div className="inline-flex items-center justify-end">
                 <img
-                  src="../src/img/bakash.png"
+                  src="/images/bakash.png"
                   alt="bakash"
                   className="w-10 inline"
                 />
+                <img src="/images/visa.png" alt="visa" className="h-3 inline" />
                 <img
-                  src="../src/img/visa.png"
-                  alt="visa"
-                  className="h-3 inline"
-                />
-                <img
-                  src="../src/img/mastercard.png"
+                  src="/images/mastercard.png"
                   alt="mastercard"
                   className="h-3 inline"
                 />
                 <img
-                  src="../src/img/dfff.png"
+                  src="/images/dfff.png"
                   alt="bakash"
                   className="w-10 inline"
                 />
