@@ -2,5 +2,10 @@
   "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }],
   "redirects": [
     { "source": "/old-path", "destination": "/new-path", "permanent": true }
-  ]
+  ],
+  "build": {
+    "env": {
+      "VITE_PUBLIC_PATH": "/"
+    }
+  }
 }
