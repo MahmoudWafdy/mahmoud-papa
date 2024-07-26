@@ -19,7 +19,7 @@ const slides = [
     image: "/images/iphone.png",
   },
   {
-    log: "/images/samsung1.png",
+    logo: "/images/samsunglogo.png",
     title: "Samsung Galaxy S21",
     description: "Limited Time Offer until next month",
     image: "/images/samsung.png",
@@ -31,7 +31,7 @@ const slides = [
     image: "/images/iphone.png",
   },
   {
-    log: "/images/samsung1.png",
+    logo: "/images/samsunglogo.png",
     title: "Samsung Galaxy S21",
     description: "Limited Time Offer until next month",
     image: "/images/samsung.png",
@@ -48,12 +48,12 @@ const VoucherHome = () => {
         >
           <div
             className=" inline-flex flex-col justify-center gap-2 items-start text-white text-xs
-           min-h-[200px] md:pt-8 md:pl-8 md:min-h-[350px]"
+            min-h-[200px] md:pt-8 md:pl-8 md:min-h-[350px]"
           >
             <div className="flex justify-start items-center w-full gap-2 md:gap-5">
               <img
                 src={slide.logo}
-                alt="apple logo"
+                alt="logo"
                 className="w-8 md:w-10"
                 loading="lazy"
               />
