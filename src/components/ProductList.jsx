@@ -2,7 +2,7 @@ import ProductCard from "./ProductCard";
 
 const ProductList = ({ data }) => {
   return (
-    <div className="flex gap-2 md:gap-4 justify-center flex-wrap my-20">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 lg:grid-cols-5 my-20">
       {data &&
         data.map((product) => (
           <ProductCard

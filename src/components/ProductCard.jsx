@@ -88,12 +88,16 @@ const ProductCard = ({
         },
       }}
     >
-      <div className={`w-11/12 md:w-56 border-solid`}>
-        <div className="flex justify-center items-center group relative bg-gray-100 h-40 md:h-56 ">
+      <div className={`w-full border-solid `}>
+        <div
+          className="flex justify-center items-center group relative bg-gray-100"
+          style={{ paddingTop: "100%" }}
+        >
           <img
             src={images[0]}
             alt={title}
-            className="object-cover h-5/6 object-center hover:scale-110 hover:shadow-md hover:opacity-95 transition duration-300 ease-in-out"
+            className="absolute top-0 left-0 w-full h-full object-contain object-center hover:scale-110 hover:shadow-md
+             hover:opacity-95 transition duration-300 ease-in-out"
           />
           <div className="absolute top-1 left-1 py-1 px-3 rounded bg-secondary text-white text-xs  md:text-base">
             {discountPercentage ? `-${discountPercentage}% ` : ""}
@@ -265,6 +269,7 @@ const ProductCard = ({
             </button>
           </div>
         </div>
+
         <div className="flex flex-col gap-2 mt-3">
           <h2 className="text-sm md:text-lg font-bold mt-2 text-left">
             {title}
