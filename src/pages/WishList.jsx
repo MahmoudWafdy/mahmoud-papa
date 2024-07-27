@@ -20,14 +20,14 @@ const WishList = () => {
   };
 
   return (
-    <div className="wishList  w-full my-10">
+    <div className="wishList  w-full my-10 ">
       <div className="flex justify-between items-center w-full">
         <div>
           <span className="text-xl">WishList</span>
           <span className="text-xl">(4)</span>
         </div>
         <button
-          className="font-medium h-14 w-60 border border-solid border-gray-300 
+          className="w-36 font-medium h-14 md:w-60 border border-solid border-gray-300 
         hover:bg-secondary hover:text-white transition-all duration-300 "
           onClick={handleClickButton}
         >

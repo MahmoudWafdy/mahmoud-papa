@@ -17,35 +17,36 @@ const slides = [
     title: "Iphone 14 Series",
     description: "Up to 10% off Voucher",
     image: "/images/iphone.png",
+    id: 1,
   },
   {
     logo: "/images/apple-logo.png",
     title: "Samsung Galaxy S21",
     description: "Limited Time Offer until next month",
     image: "/images/samsung.png",
+    id: 2,
   },
   {
     logo: "/images/apple-logo.png",
     title: "Iphone 14 Series",
     description: "Up to 10% off Voucher",
     image: "/images/iphone.png",
+    id: 3,
   },
   {
     logo: "/images/samsunglogo.png",
     title: "Samsung Galaxy S21",
     description: "Limited Time Offer until next month",
     image: "/images/samsung.png",
+    id: 4,
   },
 ];
 
 const VoucherHome = () => {
   return (
     <Slider {...settings}>
-      {slides.map((slide, index) => (
-        <div
-          className="slide  md:mt-8 w-full items-center p-5"
-          key={slide.index}
-        >
+      {slides.map((slide) => (
+        <div className="slide  md:mt-8 w-full items-center p-5" key={slide.id}>
           <div
             className=" inline-flex flex-col justify-center gap-2 items-start text-white text-xs
             min-h-[200px] md:pt-8 md:pl-8 md:min-h-[350px] lg:min-h[380px]"

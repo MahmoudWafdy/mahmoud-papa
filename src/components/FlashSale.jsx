@@ -2,8 +2,7 @@ import CountdownTimer from "./CountdownTimer";
 import FlashSaleSlider from "./FlashSaleSlider";
 
 const FlashSale = () => {
-  //   const now = new Date();
-  const targetDate = new Date(2024, 6, 2);
+  const targetDate = new Date(2024, 9, 2);
 
   return (
     <div className=" my-20">

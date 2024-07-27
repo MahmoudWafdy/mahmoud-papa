@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 // import "./ProductCard.css";
 import { UseFetchData } from "../UseFetchData";
 import { Link } from "react-router-dom";
@@ -76,7 +76,7 @@ const FlashSaleSlider = () => {
         ))}
       </Slider>
       <button className="bg-secondary text-white py-3 px-6 mx-auto mt-8">
-        <Link to={"category/electronics"}>View All Products</Link>
+        <Link to={"/electronics"}>View All Products</Link>
       </button>
     </div>
   );

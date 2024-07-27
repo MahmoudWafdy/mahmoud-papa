@@ -5,8 +5,7 @@ import { WishCartListContext } from "../components/WishCartListContext";
 
 const Product = () => {
   const location = useLocation();
-  const productOnpage = location.state.product; //to collect data from clicked product itself
-  // console.log(product);
+  const productOnpage = location.state?.product; //to collect data from clicked product itself
   const {
     id,
     images,

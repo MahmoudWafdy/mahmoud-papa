@@ -92,7 +92,7 @@ const Contact = () => {
             className="bg-gray-200 p-2 outline-none rounded md:h-10"
           ></input>
           <input
-            type="number"
+            type="text"
             placeholder="Your Phone*"
             className="bg-gray-200 px-2 outline-none rounded md:h-10"
           ></input>

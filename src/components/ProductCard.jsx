@@ -3,6 +3,7 @@ import { WishCartListContext } from "./WishCartListContext";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({
+  id,
   images,
   title,
   discountPercentage,
@@ -12,9 +13,8 @@ const ProductCard = ({
   category,
   stock,
   description,
-  shrink,
+  // shrink,
 }) => {
-  // console.log(review);
   const { handleAddToWishList, wishList, handleAddToCartList, cartList } =
     useContext(WishCartListContext);
 
@@ -76,6 +76,7 @@ const ProductCard = ({
       to={`/${category}/${title}`}
       state={{
         product: {
+          id,
           images,
           title,
           discountPercentage,
@@ -87,13 +88,7 @@ const ProductCard = ({
         },
       }}
     >
-      <div
-        className={
-          shrink
-            ? `w-56  border-solid flex flex-col flex-shrink-0`
-            : `w-11/12  md:w-56  border-solid`
-        }
-      >
+      <div className={`w-11/12 md:w-56 border-solid`}>
         <div className="flex justify-center items-center group relative bg-gray-100 h-40 md:h-56 ">
           <img
             src={images[0]}

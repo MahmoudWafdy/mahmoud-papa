@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const MusicExclusive = () => {
   const calculateTimeLeft = () => {
-    const difference = +new Date(2024, 6, 12) - +new Date();
+    const difference = +new Date(2024, 9, 28) - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -32,7 +32,7 @@ const MusicExclusive = () => {
       <div className="music flex flex-col  md:flex-row items-center bg-black w-full ">
         <div className="flex basis-full  order-2 md:order-1 snap-start flex-col justify-center gap-2 items-start text-white text-xs pt-2 pl-2  md:pt-8 md:pl-8">
           <div className="flex justify-start items-center w-full gap-2 md:gap-5">
-            <p className=" text-[#00FF66] my-3">Category</p>
+            <p className=" text-[#00FF66] my-3 ">Category</p>
           </div>
           <p className="justify-self-start text-2xl md:text-5xl">
             Enhance Your Music Experience
@@ -67,7 +67,7 @@ const MusicExclusive = () => {
               </span>
             </div>
           </div>
-          <Link to={"/card"} className="items-center  mb-4 mx-auto md:mx-0">
+          <Link to={`/cart`} className="items-center  mb-4 mx-auto md:mx-0">
             <button className="bg-[#00FF66] py-4 px-8 rounded">Buy now</button>
           </Link>
         </div>

@@ -102,7 +102,7 @@ const OurProducts = () => {
         ))}
       </Slider>
       <button className="bg-secondary text-white py-3 px-6 mx-auto mt-5">
-        <Link to={"category/medicin"}>View All Products</Link>
+        <Link to={"/medicin"}>View All Products</Link>
       </button>
     </div>
   );

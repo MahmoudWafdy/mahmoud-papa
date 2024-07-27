@@ -26,7 +26,7 @@ const BestSelling = () => {
           Best Selling Products
         </p>
         <Link
-          to={"/category/bestselling"}
+          to={"/bestselling"}
           className="bg-secondary py-2 px-6 text-white rounded absolute right-0 top-[-50px] md:-top-10 md:py-3 md:px-8"
         >
           <button className="">View All</button>

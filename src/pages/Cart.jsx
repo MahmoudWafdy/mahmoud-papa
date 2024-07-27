@@ -251,14 +251,20 @@ const Cart = () => {
               <span>Total</span>
               <span>{finalTotal.toFixed(2)}$</span>
             </div>
-            <Link to={"/checkout"} className="mx-auto">
-              <button
-                className="font-medium mt-1 py-2 w-48 mx-auto md:h-12 bg-secondary text-white sm-md:w-40 rounded
-                         hover:bg-white hover:text-black transition-all duration-300 "
-              >
+            {cartList.length > 0 ? (
+              <Link to="/checkout" className="mx-auto">
+                <button
+                  className="font-medium mt-1 py-2 w-48 mx-auto md:h-12 bg-secondary text-white sm-md:w-40 rounded
+                     hover:bg-white hover:text-black transition-all duration-300"
+                >
+                  Procees to checkout
+                </button>
+              </Link>
+            ) : (
+              <button className="font-medium mt-1 py-2 w-48 mx-auto md:h-12 bg-gray-200 text-gray-500 cursor-not-allowed sm-md:w-40 rounded">
                 Procees to checkout
               </button>
-            </Link>
+            )}
           </div>
         </div>
       </div>
