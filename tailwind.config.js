@@ -6,7 +6,11 @@ export default {
   ],
   theme: {
     
-    extend: {
+    extend: { 
+        direction: {
+        rtl: 'rtl',
+        ltr: 'ltr',
+      },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
       },colors: {
@@ -19,6 +23,7 @@ export default {
       },
     },
   },
+  variants: {},
   plugins: [],
 }
 

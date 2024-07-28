@@ -94,7 +94,6 @@ const SignUp = () => {
         <div className="flex gap-2 justify-center items-center">
           <p>Already have account?</p>
           <Link to={"/logIn"} className="underline">
-            {" "}
             Log in
           </Link>
         </div>
