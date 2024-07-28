@@ -22,9 +22,9 @@ const AboutSlider = () => {
   return (
     <Slider {...settings}>
       <div className=" flex flex-col   rounded p-3 mr-2 ">
-        <div className="w-full  overflow-hidden flex justify-center items-start p-5 bg-gray-100 pb-0">
+        <div className="w-full overflow-hidden flex justify-center items-start p-5 bg-gray-100 pb-0">
           <img
-            src="../src/img/person11.png"
+            src="/images/person11.png"
             alt="person1 image"
             className="w-full"
           ></img>
@@ -93,7 +93,7 @@ const AboutSlider = () => {
       <div className=" flex flex-col   rounded p-3 mr-2">
         <div className="w-full  overflow-hidden flex justify-center items-start p-5 bg-gray-100 pb-0">
           <img
-            src="../src/img/person2.png"
+            src="/images/person2.png"
             alt="person1 image"
             className="w-full"
           ></img>
@@ -162,7 +162,7 @@ const AboutSlider = () => {
       <div className=" flex flex-col   rounded p-3 mr-2">
         <div className="w-full  overflow-hidden flex justify-center items-start p-5 bg-gray-100 pb-0">
           <img
-            src="../src/img/person11.png"
+            src="/images/person11.png"
             alt="person1 image"
             className="w-full"
           ></img>
@@ -231,7 +231,7 @@ const AboutSlider = () => {
       <div className=" flex flex-col   rounded p-3 mr-2">
         <div className="w-full  overflow-hidden flex justify-center items-start p-5 bg-gray-100 pb-0">
           <img
-            src="../src/img/person2.png"
+            src="/images/person2.png"
             alt="person1 image"
             className="w-full"
           ></img>
