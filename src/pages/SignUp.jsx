@@ -1,19 +1,23 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Dashboard from "../components/Dashboard";
-import { auth } from "../FiberBase";
+// import Dashboard from "../components/Dashboard";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../FierBase";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const [error, setError] = useState(null);
 
-  const handleSignup = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await auth.createUserWithEmailAndPassword(email, password);
+      await createUserWithEmailAndPassword(auth, email, password, name);
+      alert("User created successfully");
     } catch (error) {
       setError(error.message);
+      alert(error.message);
     }
   };
   return (
@@ -31,6 +35,8 @@ const SignUp = () => {
           <input
             type="text"
             placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             className="py-2 outline-none border-b border-solid border-slate-400 sm-md:max-w-[300px]"
           />
           <input
@@ -50,7 +56,7 @@ const SignUp = () => {
         </form>
         <button
           className="bg-secondary py-2 rounded sm-md:max-w-[300px] text-white"
-          onClick={handleSignup}
+          onClick={handleSubmit}
         >
           Create Acount
         </button>
@@ -101,7 +107,6 @@ const SignUp = () => {
         </div>
         {error && <p>{error}</p>}
       </div>
-      <Dashboard />
     </div>
   );
 };

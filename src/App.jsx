@@ -20,6 +20,7 @@ import MyReturns from "./pages/MyReturns";
 import MyCancelation from "./pages/MyCancelation";
 import Product from "./pages/Product";
 import CheckOut from "./pages/CheckOut";
+import PasswordReset from "./pages/PasswordReset";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="signup" element={<SignUp />} />
             <Route path="login" element={<LogIn />} />
+            <Route path="reset-password" element={<PasswordReset />} />
             <Route path="wishlist" element={<WishList />} />
             <Route path="cart" element={<Cart />} />
             <Route path="account" element={<Account />}>

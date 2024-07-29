@@ -1,19 +1,24 @@
 // import { signInWithEmailAndPassword } from "firebase/auth";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../FierBase";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(email, password);
+      await signInWithEmailAndPassword(auth, email, password);
+      alert("Logged in successfully");
+      navigate("/"); // Navigate to home page after successful login
     } catch (error) {
       setError(error.message);
+      alert(error.message);
     }
   };
   return (
@@ -48,11 +53,13 @@ const LogIn = () => {
         <div className="flex gap-3 justify-between items-center max-w-[300px] mt-6">
           <button
             className="bg-secondary py-2 px-5 rounded max-w-[300px] text-white"
-            onClick={handleLogin}
+            onClick={handleSubmit}
           >
             Log In
           </button>
-          <Link to={""}>Forget Password ?</Link>
+          <button onClick={() => navigate("/reset-password")}>
+            Forgot Password?
+          </button>
         </div>
       </div>{" "}
       {error && <p>{error}</p>}
