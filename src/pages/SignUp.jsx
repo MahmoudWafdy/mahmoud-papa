@@ -1,17 +1,19 @@
 import { Link } from "react-router-dom";
-import { signUp } from "../FireBaseAuth";
 import { useState } from "react";
+import Dashboard from "../components/Dashboard";
+import { auth } from "../FiberBase";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
-  const handleSignUp = async () => {
+  const handleSignup = async (e) => {
+    e.preventDefault();
     try {
-      await signUp(email, password);
-      alert("Sign up successful!");
+      await auth.createUserWithEmailAndPassword(email, password);
     } catch (error) {
-      console.error("Error signing up:", error);
+      setError(error.message);
     }
   };
   return (
@@ -32,7 +34,7 @@ const SignUp = () => {
             className="py-2 outline-none border-b border-solid border-slate-400 sm-md:max-w-[300px]"
           />
           <input
-            type="text"
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email or Phone number"
@@ -48,7 +50,7 @@ const SignUp = () => {
         </form>
         <button
           className="bg-secondary py-2 rounded sm-md:max-w-[300px] text-white"
-          onClick={handleSignUp}
+          onClick={handleSignup}
         >
           Create Acount
         </button>
@@ -97,7 +99,9 @@ const SignUp = () => {
             Log in
           </Link>
         </div>
+        {error && <p>{error}</p>}
       </div>
+      <Dashboard />
     </div>
   );
 };

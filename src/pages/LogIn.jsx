@@ -1,6 +1,21 @@
+// import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const LogIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await signInWithEmailAndPassword(email, password);
+    } catch (error) {
+      setError(error.message);
+    }
+  };
   return (
     <div className="grid grid-cols-1 my-10 md:grid-cols-3 md:gap-6">
       <div className="col-span-2 relative">
@@ -16,23 +31,31 @@ const LogIn = () => {
         <p className="">Enter your details below</p>
         <form className="flex flex-col gap-3 mt-3 ">
           <input
-            type="text"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Email or Phone number"
             className="py-3 outline-none border-b border-solid border-slate-400 w-full md:max-w-[300px]"
           />
           <input
             type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             className="py-3 outline-none border-b border-solid border-slate-400 w-full md:max-w-[300px]"
           ></input>
         </form>
         <div className="flex gap-3 justify-between items-center max-w-[300px] mt-6">
-          <button className="bg-secondary py-2 px-5 rounded max-w-[300px] text-white">
+          <button
+            className="bg-secondary py-2 px-5 rounded max-w-[300px] text-white"
+            onClick={handleLogin}
+          >
             Log In
           </button>
           <Link to={""}>Forget Password ?</Link>
         </div>
-      </div>
+      </div>{" "}
+      {error && <p>{error}</p>}
     </div>
   );
 };

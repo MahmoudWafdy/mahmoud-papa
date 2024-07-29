@@ -1,26 +1,39 @@
-
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
-import { getStorage } from 'firebase/storage';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBwOF061BRwBuDMjjkPBF8HKrx20ZVvqgg",
-    authDomain: "my-ecommerce-website-37a55.firebaseapp.com",
-    projectId: "my-ecommerce-website-37a55",
-    storageBucket: "my-ecommerce-website-37a55.appspot.com",
-    messagingSenderId: "912712473237",
-    appId: "1:912712473237:web:6c5fad0c399da89666599c",
-    measurementId: "G-FJ71CHBWVX"
-  };
+  apiKey: "AIzaSyCL4WHdyXEaU-9I4M0Y75tEUaWXiYp1uwo",
+  authDomain: "mahmoud-papa.firebaseapp.com",
+  projectId: "mahmoud-papa",
+  storageBucket: "mahmoud-papa.appspot.com",
+  messagingSenderId: "221835315554",
+  appId: "1:221835315554:web:1e84937e5ebfdbdff0043b",
+  measurementId: "G-32E6K5S3B6"
+};
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 // Initialize Firebase services
-const auth = getAuth(app);
-const db = getFirestore(app);
-const storage = getStorage(app);
+const auth = firebase.auth();
+const db = firebase.firestore();
 
-// Export the initialized services to use in other parts of your app
-export { auth, db, storage };
+// Use device language for auth
+auth.useDeviceLanguage();
+
+// Export Firebase services
+export { auth, db };
+
+// Export Firebase auth functions
+export const signInWithEmailAndPassword = (email, password) => {
+  return auth.signInWithEmailAndPassword(email, password);
+};
+
+export const createUserWithEmailAndPassword = (email, password) => {
+  return auth.createUserWithEmailAndPassword(email, password);
+};
+
+export const signOut = () => {
+  return auth.signOut();
+};
