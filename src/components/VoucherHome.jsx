@@ -87,7 +87,7 @@ const VoucherHome = () => {
             </Link>
           </div>
 
-          <div className="md:py-4 md:pr-8 w-2/3 md:w-1/2">
+          <div className="md:py-2 md:pr-2 w-2/3 md:w-1/2">
             <img src={slide.image} alt="iphone" loading="lazy" />
           </div>
         </div>
