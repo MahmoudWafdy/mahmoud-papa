@@ -1,10 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import SearchInput from "./SearchInput";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { WishCartListContext } from "./WishCartListContext";
+import { useUser } from "./UserContext";
 
 const HeaderNavigation = () => {
   const { wishListCount, cartListCount } = useContext(WishCartListContext);
+  const { user } = useUser();
 
   const handleClickMenu = () => {
     document.querySelector(".nav_link--mobile").style.opacity = 1;
@@ -349,6 +351,13 @@ const HeaderNavigation = () => {
                 />
               </svg>
             </NavLink>
+            {user ? (
+              <div className="text-secondary text-xs font-medium">
+                Hi, {user.displayName}
+              </div>
+            ) : (
+              <div className="text-secondary font-medium">Guest</div>
+            )}
           </div>
         </div>
       </div>

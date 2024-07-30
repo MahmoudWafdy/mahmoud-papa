@@ -1,20 +1,37 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-// import Dashboard from "../components/Dashboard";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../FierBase";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth, db } from "../FireBase";
+import { doc, setDoc } from "firebase/firestore";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email, password, name);
-      alert("User created successfully");
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      // Update the user profile with the name
+      await updateProfile(user, {
+        displayName: name,
+      });
+      // Store the user's name in Firestore
+      await setDoc(doc(db, "users", user.uid), {
+        name,
+        email,
+      });
+
+      alert(`User created successfully, Welcome ${name}`);
+      navigate("/login");
     } catch (error) {
       setError(error.message);
       alert(error.message);
@@ -28,7 +45,7 @@ const SignUp = () => {
           className="absolute top-0 -left-5 h-full object-cover object-center w-full"
         ></img>
       </div>
-      <div className="flex flex-col gap-2 md:py-16">
+      <div className="flex flex-col gap-2 md:py-16 md:min-h-[510px]">
         <h2 className="font-normal text-2xl md:text-3xl">Create an account</h2>
         <p className="">Enter your details below</p>
         <form className="flex flex-col gap-3 mt-3 ">
@@ -44,14 +61,14 @@ const SignUp = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email or Phone number"
-            className="py-3 outline-none border-b border-solid border-slate-400 sm-md:max-w-[300px]"
+            className="py-2 outline-none border-b border-solid border-slate-400 sm-md:max-w-[300px]"
           />
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
-            className="py-3 outline-none border-b border-solid border-slate-400 sm-md:max-w-[300px]"
+            className="py-2 outline-none border-b border-solid border-slate-400 sm-md:max-w-[300px]"
           ></input>
         </form>
         <button

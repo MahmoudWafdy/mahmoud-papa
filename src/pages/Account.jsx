@@ -1,6 +1,9 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
+import { useUser } from "../components/UserContext";
 
 const Account = () => {
+  const { user } = useUser();
+
   return (
     <div className="my-16 text-sm md:text-base">
       <div className="flex justify-between mb-10 gap-8 ">
@@ -14,7 +17,13 @@ const Account = () => {
         </div>
         <div>
           <span>Welcome/ </span>
-          <span className="text-secondary font-medium">Mohamed Ali</span>
+          {user ? (
+            <span className="text-secondary font-medium">
+              {user.displayName}
+            </span>
+          ) : (
+            <span className="text-secondary font-medium">Guest</span>
+          )}
         </div>
       </div>
       <div className="flex justify-between  gap-4">

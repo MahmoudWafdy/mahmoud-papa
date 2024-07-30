@@ -1,4 +1,8 @@
+import { useUser } from "../components/UserContext";
+
 const Profile = () => {
+  const { user } = useUser();
+
   return (
     <div className="w-full h-full p-5 md:p-10 text-xs md:text-base">
       <h2 className="font-semibold text-secondary">Edit You Profile</h2>
@@ -9,7 +13,7 @@ const Profile = () => {
         <input
           type="text"
           id="firstName"
-          placeholder="Mohamed"
+          placeholder={user ? user.displayName : "mohamed"}
           className="col-span-2  md:col-1 md:row-start-2 md:row-end-3 bg-gray-100 p-2 outline-none"
         ></input>
         <label htmlFor="lastName" className="col-span-2">
@@ -27,7 +31,7 @@ const Profile = () => {
         <input
           type="text"
           id="Email"
-          placeholder="rimel1111@gmail.com"
+          placeholder={user ? user.email : "email"}
           className="col-span-2 md:col-1 md:row-start-4 md:row-end-5 bg-gray-100 p-2 outline-none"
         ></input>
         <label htmlFor="lastName" className="col-span-2">

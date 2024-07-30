@@ -55,7 +55,7 @@
   justify-content: space-between;
   background-color: black;
 }
-.voucher_Home .slick-track,
+.Flash_slider .slick-track,
 .our_product .slick-track {
   display: flex !important;
   gap: 1rem;

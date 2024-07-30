@@ -1,6 +1,6 @@
 // src/pages/PasswordReset.jsx
 import { useState } from "react";
-import { auth } from "../FierBase";
+import { auth } from "../FireBase";
 import { sendPasswordResetEmail } from "firebase/auth";
 
 const PasswordReset = () => {
@@ -24,7 +24,7 @@ const PasswordReset = () => {
           className="absolute top-0 -left-5 h-full object-cover object-center w-full"
         ></img>
       </div>
-      <div className="flex flex-col gap-2 md:py-16">
+      <div className="flex flex-col gap-2 md:py-16 md:min-h-[510px]">
         <h2 className="font-normal text-2xl md:text-3xl">Reset Password</h2>
         <p className="">Enter your details below</p>
         <form className="flex flex-col gap-3 mt-3 " onSubmit={handleSubmit}>

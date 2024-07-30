@@ -1,8 +1,9 @@
 // import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../FierBase";
+import { auth } from "../FireBase";
+import { useUser } from "../components/UserContext";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
@@ -10,11 +11,13 @@ const LogIn = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  const { user } = useUser();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      alert("Logged in successfully");
+      alert(`Welcome, ${user.displayName} ,Shop Now `);
       navigate("/"); // Navigate to home page after successful login
     } catch (error) {
       setError(error.message);
@@ -22,14 +25,14 @@ const LogIn = () => {
     }
   };
   return (
-    <div className="grid grid-cols-1 my-10 md:grid-cols-3 md:gap-6">
+    <div className="grid grid-cols-1 my-10 md:grid-cols-3 md:gap-6 ">
       <div className="col-span-2 relative">
         <img
           src="/images/sign.jpeg"
-          className="absolute top-0 -left-5 h-full object-cover object-center w-full"
+          className="absolute top-0 -left-5 lg:-left-28 h-full object-cover object-center w-full"
         ></img>
       </div>
-      <div className="flex flex-col gap-2 md:py-16">
+      <div className="flex flex-col gap-2 md:py-16 md:min-h-[510px]">
         <h2 className="font-normal text-2xl md:text-3xl">
           Log in to Exclusive
         </h2>

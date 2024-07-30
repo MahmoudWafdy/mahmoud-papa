@@ -9,9 +9,25 @@ const Cart = () => {
 
   const { cartList, handleAddToCartList, setCartlist } =
     useContext(WishCartListContext);
+
   const [isInCartList, setIsInCartList] = useState(
     cartList.some((product) => product.id === product.title)
   );
+
+  // Initialize cartList with deafault values
+  const initializeCartList = () => {
+    const initializedCartList = cartList.map((product) => ({
+      ...product,
+      quantity: 1,
+      total_Price: product.price,
+    }));
+    setCartlist(initializedCartList);
+    localStorage.setItem("cartList", JSON.stringify(initializedCartList));
+  };
+
+  useEffect(() => {
+    initializeCartList();
+  }, []);
 
   const handleInputChange = (product, event) => {
     const newQuantity = parseInt(event.target.value, 10);
@@ -49,7 +65,9 @@ const Cart = () => {
     return total + CartProduct.total_Price;
   }, 0); //true
 
-  const [finalTotal, setFinalTotal] = useState(0);
+  const [finalTotal, setFinalTotal] = useState(
+    subTotalAll + (shipping ? shipping : 0)
+  );
 
   const handleCouponClickedButton = (e) => {
     e.preventDefault();
@@ -83,12 +101,12 @@ const Cart = () => {
   const discountPercentage = couponDiscount
     ? couponDiscount[getAppliedCouponCode]
     : 0;
-  const discountAmount = (finalTotal.toFixed(2) * discountPercentage) / 100;
 
   useEffect(() => {
-    setFinalTotal(
-      subTotalAll.toFixed(2) + (shipping ? shipping : 0) - discountAmount
-    );
+    const discountAmount = (finalTotal.toFixed(2) * discountPercentage) / 100;
+
+    setFinalTotal(subTotalAll + (shipping ? shipping : 0) - discountAmount);
+
     localStorage.setItem(
       "cartListTotalPrice",
       JSON.stringify(finalTotal.toFixed(2))
