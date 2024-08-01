@@ -16,7 +16,7 @@ const RelatedWishListProduct = () => {
     return <div>Error: {error}</div>;
   }
   return (
-    <div className="related_product mt-6 grid  grid-cols-1 sm-md:grid-cols-3 lg:grid-cols-4">
+    <div className="related_product mt-6 grid gap-2  grid-cols-2 sm-md:grid-cols-3 lg:grid-cols-5">
       {result.map((product) => (
         <ProductCard
           key={product.id}

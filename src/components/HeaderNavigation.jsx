@@ -352,7 +352,7 @@ const HeaderNavigation = () => {
               </svg>
             </NavLink>
             {user ? (
-              <div className="text-secondary text-xs font-medium">
+              <div className="text-secondary text-xs">
                 Hi, {user.displayName}
               </div>
             ) : (

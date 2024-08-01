@@ -4,7 +4,7 @@ import ProductCard from "../components/ProductCard";
 import RelatedWishListProduct from "../components/RelatedWishListProducts";
 
 const WishList = () => {
-  const { wishList, cartList, handleAddToCartList } =
+  const { wishList, cartList, handleAddToCartList, wishListCount } =
     useContext(WishCartListContext);
   const handleClickButton = () => {
     if (wishList.length > 0) {
@@ -24,10 +24,10 @@ const WishList = () => {
       <div className="flex justify-between items-center w-full">
         <div>
           <span className="text-xl">WishList</span>
-          <span className="text-xl">(4)</span>
+          <span className="text-xl">{`(${wishListCount})`}</span>
         </div>
         <button
-          className="w-36 font-medium h-14 md:w-60 border border-solid border-gray-300 
+          className="w-36 font-medium h-10 md:h-14 md:w-60 border border-solid border-gray-300 
         hover:bg-secondary hover:text-white transition-all duration-300 "
           onClick={handleClickButton}
         >
@@ -35,7 +35,7 @@ const WishList = () => {
         </button>
       </div>
 
-      <div className="my-20 grid  grid-cols-1 sm-md:grid-cols-3 lg:grid-cols-4">
+      <div className="my-20 grid  grid-cols-2 gap-2 sm-md:grid-cols-3 lg:grid-cols-5">
         {wishList?.length === 0 ? (
           <div className="flex justify-center font-semibold text-secondary w-full h-7 col-span-3 ">
             <span>There is no product</span>

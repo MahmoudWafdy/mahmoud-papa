@@ -148,7 +148,8 @@ const Category = () => {
         <div className="slider_container mt-10 mb-5 flex gap-5 overflow-hidden justify-between">
           {currentSlides.map((slide) => (
             <div
-              className="flex flex-col justify-center items-center gap-3 border border-solid border-gray-400 w-40 h-36"
+              className="flex flex-col justify-center items-center gap-3 border border-solid border-gray-400 w-40 h-36 
+              hover:bg-secondary hover:text-white hover:border-secondary transition-all "
               key={slide.id}
             >
               <Link
