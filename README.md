@@ -21,7 +21,7 @@ Flexbox  techniques were employed for efficient and flexible positioning of elem
 Visit the live website [My website](https://mahmoud-papa.vercel.app/).
 
 ## Repository
-Find the source code in this [https://github.com/MahmoudWafdy/news-feed).
+Find the source code in this [https://github.com/MahmoudWafdy/mahmoudpapa).
 
 ## Preview
 ![website photo](public/images/git1.JPG)
