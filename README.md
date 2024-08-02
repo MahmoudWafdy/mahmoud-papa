@@ -1,8 +1,31 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview Mahmoud-papa (ecommerce website)
+This project was apply CSS, HTML, and Javascript,REACT with calling from API, showcasing proficiency in web development technologies, including HTML, CSS, grid,Flex, JavaScript,react. The goal of this project was to demonstrate skills in appealing web application.
 
-Currently, two official plugins are available:
+## Technologies Used
+- HTML
+- CSS
+- grid
+- flex
+- javaScript
+- react
+- tailwind
+- API
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+### Flexbox & Grid
+Flexbox  techniques were employed for efficient and flexible positioning of elements, contributing to a clean and organized design.
+
+## Live Website
+Visit the live website [My website](https://mahmoud-papa.vercel.app/).
+
+## Repository
+Find the source code in this [https://github.com/MahmoudWafdy/news-feed).
+
+## Preview
+![website photo](./images/git1.JPG)
+![website photo](./git2.JPG) 
+![website photo](./git3.JPG) 
+
+
