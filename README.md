@@ -14,7 +14,10 @@ This project was apply CSS, HTML, and Javascript,and REACT with calling products
 
 ## Features
 
-### Flexbox & Grid
+### Responsive Design
+The project is designed to be responsive, ensuring a seamless user experience across various devices and screen sizes.
+
+### Flexbox and Grid Layout
 Flexbox  techniques were employed for efficient and flexible positioning of elements, contributing to a clean and organized design.
 
 ## Live Website
