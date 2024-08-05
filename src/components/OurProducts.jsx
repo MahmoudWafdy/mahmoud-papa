@@ -101,7 +101,7 @@ const OurProducts = () => {
           />
         ))}
       </Slider>
-      <button className="bg-secondary text-white py-3 px-6 mx-auto mt-5">
+      <button className="bg-secondary text-white py-3 px-6 mx-auto mt-5 transition hover:scale-105 hover:shadow-md ease-in-out duration-300">
         <Link to={"/medicin"}>View All Products</Link>
       </button>
     </div>

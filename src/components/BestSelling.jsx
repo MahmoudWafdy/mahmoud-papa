@@ -27,7 +27,8 @@ const BestSelling = () => {
         </p>
         <Link
           to={"/bestselling"}
-          className="bg-secondary py-2 px-6 text-white rounded absolute right-0 top-[-50px] md:-top-10 md:py-3 md:px-8"
+          className="bg-secondary py-2 px-6 text-white rounded absolute right-0 top-[-50px] md:-top-10 md:py-3 md:px-8 
+          transition hover:scale-105 hover:shadow-md ease-in-out duration-300"
         >
           <button className="">View All</button>
         </Link>
