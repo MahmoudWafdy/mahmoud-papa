@@ -165,3 +165,26 @@
     display: none !important;
   }
 }
+
+#back-to-top {
+  z-index: 100;
+  opacity: 0;
+  animation: bounce 2s ease-in-out infinite; /* Add animation */
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Show the button when scrolled down */
+.scrolled #back-to-top {
+  opacity: 1;
+}
