@@ -20,13 +20,7 @@
   direction: ltr;
   unicode-bidi: bidi-override;
 }
-/* .slick-slide {
-  width: auto !important;
-}
-.voucher {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-} */
+
 :root {
   --tw-color-secondary: #db4444;
 }
@@ -132,6 +126,7 @@
     visibility: hidden;
   }
 }
+
 .custom_shadow {
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.05),
     10px 0px 10px rgba(255, 255, 255, 0.05),
@@ -141,8 +136,7 @@
 .nav_link--mobile {
   z-index: 20;
 }
-.nav_link--mobile ul {
-}
+
 .nav_link--mobile {
   background: rgb(121, 114, 121);
   background: radial-gradient(
@@ -168,7 +162,7 @@
 
 #back-to-top {
   z-index: 100;
-  opacity: 0;
+  display: none;
   animation: bounce 2s ease-in-out infinite; /* Add animation */
 }
 
@@ -185,6 +179,6 @@
 }
 
 /* Show the button when scrolled down */
-.scrolled #back-to-top {
-  opacity: 1;
+#content.scrolled + #back-to-top {
+  display: block;
 }

@@ -17,26 +17,8 @@ const Home = () => {
     setIisWomanDropdownVisible(!isWomanDropdownVisible);
   };
 
-  const backToTopButton = document.getElementById("back-to-top");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 500) {
-      // Adjust the scroll threshold as needed
-      document.body.classList.add("scrolled");
-    } else {
-      document.body.classList.remove("scrolled");
-    }
-  });
-  backToTopButton.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
   return (
     <>
-      <button
-        id="back-to-top"
-        className="w-12 h-12 p-3 transition-opacity duration-200 fixed bottom-8 right-10 bg-secondary text-white shadow-2xl rounded-full hover:scale-105 hover:shadow-md"
-      >
-        <i className="material-icons">arrow_upward</i>
-      </button>
       <div className="voucher_Home grid grid-cols-1 md:grid-cols-4 gap-8 md:flex-row w-full">
         <div className=" md:border-r  ">
           <ul className="hidden flex-row flex-wrap py-6 pr-2 md:flex md:flex-col gap-4 text-xs">

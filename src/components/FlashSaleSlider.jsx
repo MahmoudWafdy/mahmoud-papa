@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-// import "./ProductCard.css";
 import { UseFetchData } from "../UseFetchData";
 import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";

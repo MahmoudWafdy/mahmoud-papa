@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 export const UseFetchData = (category, filters = {}) => {
   const [result, setResult] = useState([]);  
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const categoriesMap = {
     womanfasion: [
@@ -40,7 +42,7 @@ export const UseFetchData = (category, filters = {}) => {
   };
 
   const applyFilters = (products) => {
-    
+
     return products.filter(product => {
       if (filters.bestSelling && product.rating <= 4.5 && product.discountPercentage <= 30) {
         return false;
@@ -61,16 +63,15 @@ export const UseFetchData = (category, filters = {}) => {
     // .then(res => res.json())
     // .then(console.log);
 
-    // fetch('https://dummyjson.com/products/category/music')
-    // .then(res => res.json())
-    // .then(console.log);
     const fetchData = async () => {
+      setIsLoading(true);
       if (categoriesMap[category]) {
         const localStorageKey = `products_${category}`;
         const localStorageData = localStorage.getItem(localStorageKey);
 
         if (localStorageData) {
           setResult(JSON.parse(localStorageData));
+          setIsLoading(false); 
         } else {
           try {
             const results = await Promise.all(
@@ -86,15 +87,20 @@ export const UseFetchData = (category, filters = {}) => {
           } catch (error) {
             setError('Error fetching data: ' + error.message);
             console.error('Error fetching data:', error);
+          } finally {
+            setIsLoading(false);
           }
+
         }
       } else {
         setError('Category not found');
+        setIsLoading(false);
+
       }
     };
 
     fetchData();
   }, [category, filters]);
 
-  return { result, error };
+  return { result, error,isLoading };
 };

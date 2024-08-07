@@ -9,17 +9,17 @@ const HeaderNavigation = () => {
   const { user } = useUser();
 
   const handleClickMenu = () => {
-    document.querySelector(".nav_link--mobile").style.opacity = 1;
+    document.querySelector(".nav_link--mobile").style.display = "block";
     document.querySelector(".burger_menu").style.display = "none";
     document.querySelector(".close_menu").style.display = "block";
   };
   const handleClickCloseButton = () => {
-    document.querySelector(".nav_link--mobile").style.opacity = 0;
+    document.querySelector(".nav_link--mobile").style.display = "none";
     document.querySelector(".close_menu").style.display = "none";
     document.querySelector(".burger_menu").style.display = "block";
   };
   const handleLinkClick = () => {
-    document.querySelector(".nav_link--mobile").style.opacity = 0;
+    document.querySelector(".nav_link--mobile").style.display = "none";
     document.querySelector(".close_menu").style.display = "none";
     document.querySelector(".burger_menu").style.display = "block";
   };
@@ -40,7 +40,7 @@ const HeaderNavigation = () => {
 
   return (
     <div className="w-full border-b-2 py-3 ">
-      <div className="container relative mx-auto px-2 flex gap-2 items-center justify-between text-xs md:px-5 md:text-sm">
+      <div className="container  relative mx-auto px-2 flex gap-2 items-center justify-between text-xs md:px-5 md:text-sm">
         <button
           htmlFor="menu"
           className="burger_menu"
