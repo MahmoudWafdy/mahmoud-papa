@@ -20,7 +20,7 @@ const slides = [
     id: 1,
   },
   {
-    logo: "/images/apple-logo.png",
+    logo: "/images/samsunglogo.png",
     title: "Samsung Galaxy S21",
     description: "Limited Time Offer until next month",
     image: "/images/samsung.png",

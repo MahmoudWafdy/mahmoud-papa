@@ -59,9 +59,6 @@ export const UseFetchData = (category, filters = {}) => {
   };
 
   useEffect(() => {
-    // fetch('https://dummyjson.com/products')
-    // .then(res => res.json())
-    // .then(console.log);
 
     const fetchData = async () => {
       setIsLoading(true);
